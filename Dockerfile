@@ -3,11 +3,11 @@ FROM golang:1.7-alpine
 RUN apk --no-cache add --virtual .builddeps \
         curl unzip autoconf automake make libtool g++ && \
     apk --no-cache add libstdc++ git && \
-    git clone https://github.com/google/protobuf.git && \
+    git clone https://github.com/google/protobuf.git --branch v3.0.0-beta-4 --depth 1 && \
     cd protobuf && \
     ./autogen.sh && \
     ./configure && \
-    make && \
+    make -j 3 && \
     make install && \
 #   ldconfig && \
     make clean && \
