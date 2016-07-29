@@ -9,7 +9,6 @@ RUN apk --no-cache add --virtual .builddeps \
     ./configure && \
     make -j 3 && \
     make install && \
-#   ldconfig && \
     make clean && \
     cd .. && rm -r protobuf && \
     apk del .builddeps && \
