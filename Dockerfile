@@ -3,7 +3,7 @@ FROM golang:1.7-alpine
 RUN apk --no-cache add --virtual .builddeps \
         curl unzip autoconf automake make libtool g++ && \
     apk --no-cache add libstdc++ git && \
-    git clone https://github.com/google/protobuf.git --branch v3.0.0-beta-4 --depth 1 && \
+    git clone https://github.com/google/protobuf.git --branch 3.0.0-GA --depth 1 && \
     cd protobuf && \
     ./autogen.sh && \
     ./configure && \
@@ -21,4 +21,5 @@ RUN go get google.golang.org/grpc
 RUN go get github.com/golang/protobuf/protoc-gen-go
 
 WORKDIR /go/src
-ENTRYPOINT [ "protoc", "--go_out=plugins=grpc:/go/src" ]
+ENTRYPOINT [ "protoc" ]
+CMD [ "--go_out=plugins=grpc:." ]
