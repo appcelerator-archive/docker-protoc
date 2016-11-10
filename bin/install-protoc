@@ -1,0 +1,19 @@
+#!/bin/sh
+apk --no-cache add --virtual .builddeps curl unzip autoconf automake make libtool g++
+apk --no-cache add libstdc++ git && \
+git clone https://github.com/google/protobuf.git --branch v3.1.0 --depth 1
+cd protobuf
+git submodule update --init
+./autogen.sh
+./configure
+make -j 3
+make install
+make clean
+cd ..
+rm -r protobuf
+go-getter /Gofile
+apk del .builddeps
+rm -rf /var/cache/apk/*
+rm /bin/go-getter
+rm /bin/install-protoc
+ 

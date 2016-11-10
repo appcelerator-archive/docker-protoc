@@ -1,0 +1,4 @@
+google.golang.org/grpc 3235584c703acd8af8ab25132618c987c5606b66
+github.com/golang/protobuf/protoc-gen-go 98fa357170587e470c5f27d3c3ea0947b71eb455
+github.com/grpc-ecosystem/grpc-gateway/protoc-gen-grpc-gateway 84398b94e188ee336f307779b57b3aa91af7063c
+github.com/grpc-ecosystem/grpc-gateway/protoc-gen-swagger 84398b94e188ee336f307779b57b3aa91af7063c

@@ -3,6 +3,7 @@
 [appcelerator/protoc](https://hub.docker.com/r/appcelerator/protoc/)
 
 Simplified Docker image for generating protocol buffer bindings with gRPC support. Based on Alpine with latest protocol buffer (proto3) and gRPC versions.
+Supports go, grpc-gateway and swagger
 
 Usage:
 
